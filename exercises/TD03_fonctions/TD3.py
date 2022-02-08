@@ -8,7 +8,7 @@ def tempsEnSeconde(temps):
 
 
 print(type(temps))
-print(tempsEnSeconde(temps))
+print("1 - Il y a", tempsEnSeconde(temps), "secondes.")
 
 
 def secondeEnTemps(seconde):
@@ -21,11 +21,11 @@ def secondeEnTemps(seconde):
 
 
 temps = secondeEnTemps(10000)
-print(temps[0], "jour(s)", temps[1], "heure(s)", temps[2], "minute(s)", temps[3], "seconde(s)")
+print("2 - Cela fait", temps[0], "jour(s)", temps[1], "heure(s)", temps[2], "minute(s)", temps[3], "seconde(s)")
 
 
 def afficheTemps(temps):
-    print("Il y a ", end=" ")
+    print("3 - Il y a ", end=" ")
     if temps[0] == 0:
         print(end=" ")
     elif temps[0] == 1:
@@ -60,12 +60,17 @@ afficheTemps((1, 0, 14, 23))
 
 def demandeTemps():
     jour = int(input("Entrée un nombre de jour(s)"))
-    heure = int(input("Entrée un nombre de jour(s)"))
-    minute = int(input("Entrée un nombre de jour(s)"))
-    seconde = int(input("Entrée un nombre de jour(s)"))
+    heure = int(input("Entrée un nombre d'heure(s)"))
+    minute = int(input("Entrée un nombre de minute(s)"))
+    seconde = int(input("Entrée un nombre de seconde(s)"))
     while jour>31 or jour<0 :
-        jours = int(input("Entrée un nombre de jour(s) compris entre 0 et 31"))
-    while heure
+        jour = int(input("Entrée un nombre de jour(s) compris entre 0 et 31 :"))
+    while heure>23 or heure<0 : 
+        heure = int(input("Entrée un nombre d'heure(s) compris entre 0 et 23 :"))
+    while minute>59 or minute<0 :
+        minute = int(input("Entrée un nombre de minute(s) compris entre 0 et 59 :"))
+    while seconde>59 or seconde<0 :
+        seconde = int(input("Entrée un nombre de seconde(s) compris entre 0 et 59 :"))
     temps = (jour, heure, minute, seconde)
     return temps
 
